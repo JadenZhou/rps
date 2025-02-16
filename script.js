@@ -49,4 +49,27 @@ function playRound(humanChoice, computerChoice) {
   console.log(`Score - You: ${humanScore}, Computer: ${computerScore}`);
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+// Function to play the game for a set number of rounds
+function playGame(rounds = 5) {
+  console.log("Welcome to Rock, Paper, Scissors!");
+
+  for (let i = 0; i < rounds; i++) {
+    console.log(`Round ${i + 1}`);
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+  }
+
+  // Final result
+  console.log("Game Over!");
+  if (humanScore > computerScore) {
+    console.log("🎉 You win the game!");
+  } else if (computerScore > humanScore) {
+    console.log("💻 Computer wins the game!");
+  } else {
+    console.log("🤝 It's a tie game!");
+  }
+}
+
+// Start the game
+playGame();
