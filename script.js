@@ -23,6 +23,9 @@ function getHumanChoice() {
   return input;
 }
 
+let humanScore = 0;
+let computerScore = 0;
+
 console.log("Hello World");
 
 console.log(getComputerChoice());
